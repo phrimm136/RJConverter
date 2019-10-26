@@ -19,7 +19,7 @@ pip install mir.dlsite
 
 ## Usage
 
-cmd 또는 powershell 실행 한 뒤, 클론 한 폴더로 이동하여 다음을 입력하십시오.
+cmd 또는 powershell을 실행 한 뒤, 클론 한 폴더로 이동하여 다음을 입력하십시오.
 ```
 python src/converter.py path/to/convert
 ```
@@ -28,3 +28,4 @@ python src/converter.py path/to/convert
 python src/converter.py -r path/to/convert
 ```
 `path/to/convert` 는 변환 대상 경로입니다.
+dlsite는 https 차단 대상이므로, 우회를 한 뒤 사용하십시오.
