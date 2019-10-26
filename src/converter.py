@@ -30,7 +30,7 @@ def rj_convert_recursive(directory: str):
         regex_result = rj_regex.search(subdir)
         if regex_result is not None:
             rj = re.sub(r"rj", "RJ", regex_result.group())
-            name = directory + dl.fetch_work(rj).name
+            name = directory + dl.fetch_work(rj).name + '/'
             print("{} -> {}".format(subdir, name))
             os.rename(subdir, os.path.join(directory, name))
             queue.append(name)
