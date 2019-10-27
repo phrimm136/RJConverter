@@ -9,22 +9,22 @@ def test_recursion():
                 "耳かき専門店 癒し処～琥福屋～/耳かき専門店 癒し処～琥福屋～"]
     os.makedirs("./tmp")
     os.makedirs("./tmp/RJ171695/not_convertable")
-    os.makedirs("./tmp/not_convertable/rj184314"
-                "./tmp/RJ253919/rj253919")
+    os.makedirs("./tmp/not_convertable/rj184314")
+    os.makedirs("./tmp/RJ253919/rj253919")
     os.system("python ./src/converter.py -r ./tmp")
-    result = [x[0].lstrip("../tmp/") for x in os.walk("./tmp")]
+    result = [x[0].lstrip("./tmp/") for x in os.walk("./tmp")]
     if required[0] not in result:
         os.system("rm -r ./tmp")
-        raise RuntimeError("RJ code (UPPER) should be converted, but it was not.\n" +
-                           required[0])
+        raise RuntimeError("RJ code (UPPER) should be converted, but it was not.",
+                           result)
     elif required[1] not in result:
         os.system("rm -r ./tmp")
-        raise RuntimeError("rj code (lower) should be converted, but it was not.\n" +
-                           required[1])
+        raise RuntimeError("rj code (lower) should be converted, but it was not.".
+                           result)
     elif required[2] not in result:
         os.system("rm -r ./tmp")
-        raise RuntimeError("Recursive conversion is not valid.\n" +
-                           required[2])
+        raise RuntimeError("Recursive conversion is not valid.",
+                           result)
     else:
         os.system("rm -r ./tmp")
         print("Recursion test completed.")

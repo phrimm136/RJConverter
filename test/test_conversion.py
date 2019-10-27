@@ -17,16 +17,20 @@ def test_conversion():
     result = os.listdir("./tmp")
     if required[0] not in result:
         os.system("rm -r ./tmp")
-        raise RuntimeError("RJ code (UPPER) should be converted, but it was not.")
+        raise RuntimeError("RJ code (UPPER) should be converted, but it was not.\n",
+                           result)
     elif required[1] not in result:
         os.system("rm -r ./tmp")
-        raise RuntimeError("rj code (lower) should be converted, but it was not.")
+        raise RuntimeError("rj code (lower) should be converted, but it was not.\n",
+                           result)
     elif required[2] not in result:
         os.system("rm -r ./tmp")
-        raise RuntimeError("Cannot parse RJ code from messy directory path")
+        raise RuntimeError("Cannot parse RJ code from messy directory path\n",
+                           result)
     elif required[3] not in result:
         os.system("rm -r ./tmp")
-        raise RuntimeError("Non Rj code should not be converted, but it was.")
+        raise RuntimeError("Non Rj code should not be converted, but it was.\n",
+                           result)
     else:
         os.system("rm -r ./tmp")
         print("Conversion test completed.")
