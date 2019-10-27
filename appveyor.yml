@@ -1,0 +1,13 @@
+image:
+  - Visual Studio 2019
+
+stack: python 3.7.4
+
+install:
+  - pip install mir.dlsite
+  - pip install pytest
+
+test_script:
+  - pytest
+
+build: off
