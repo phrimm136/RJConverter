@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import argparse as arg
 import os
 import re
@@ -21,9 +23,7 @@ def rj_convert(directory: str):
 
 def rj_convert_recursive(directory: str):
     """Convert like the above function bu recursively."""
-    subdirs = [directory + x + '/'
-               for x in os.listdir(directory)
-               if os.path.isdir(directory + x) and x[0] != '.']
+    subdirs = [directory + x + '/' for x in os.listdir(directory) if os.path.isdir(directory + x)]
     rj_regex = re.compile("(RJ|rj)[0-9]{6}")
     queue = []
     for subdir in subdirs:

@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 import os
 
 
@@ -17,19 +19,19 @@ def test_conversion():
     result = os.listdir("./tmp")
     if required[0] not in result:
         os.system("rm -r ./tmp")
-        raise RuntimeError("RJ code (UPPER) should be converted, but it was not.\n",
+        raise RuntimeError("RJ code (UPPER) should be converted, but it was not.",
                            result)
     elif required[1] not in result:
         os.system("rm -r ./tmp")
-        raise RuntimeError("rj code (lower) should be converted, but it was not.\n",
+        raise RuntimeError("rj code (lower) should be converted, but it was not.",
                            result)
     elif required[2] not in result:
         os.system("rm -r ./tmp")
-        raise RuntimeError("Cannot parse RJ code from messy directory path\n",
+        raise RuntimeError("Cannot parse RJ code from messy directory path",
                            result)
     elif required[3] not in result:
         os.system("rm -r ./tmp")
-        raise RuntimeError("Non Rj code should not be converted, but it was.\n",
+        raise RuntimeError("Non Rj code should not be converted, but it was.",
                            result)
     else:
         os.system("rm -r ./tmp")
