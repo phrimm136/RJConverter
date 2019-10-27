@@ -46,12 +46,17 @@ def rj_convert_recursive(directory: str):
 if __name__ == "__main__":
     parser = arg.ArgumentParser()
     parser.add_argument("-r", "--recursive",
-                        help="recursively convert directories",
+                        help="recursively convert subdirectories",
                         action="store_true")
-    parser.add_argument("directory",
-                        help="to convert name of its subdirectories")
+    parser.add_argument("dir",
+                        help="to convert name of its subdirectories",
+                        nargs='?',
+                        default=".")
     args = parser.parse_args()
-    if args.recursive:
-        rj_convert_recursive(os.path.abspath(args.directory) + '/')
+    if args.dir:
+        if args.recursive:
+            rj_convert_recursive(os.path.abspath(args.dir) + '/')
+        else:
+            rj_convert(os.path.abspath(args.dir) + '/')
     else:
-        rj_convert(os.path.abspath(args.directory) + '/')
+        rj_convert(os.path.abspath('.') + '/')
