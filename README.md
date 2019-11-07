@@ -2,6 +2,7 @@
 # RJConverter
 ![GitHub](https://img.shields.io/github/license/hankail05/RJConverter)
 [![Build Status](https://travis-ci.com/hankail05/RJConverter.svg?branch=master)](https://travis-ci.com/hankail05/RJConverter)
+[![codecov](https://codecov.io/gh/hankail05/RJConverter/branch/master/graph/badge.svg)](https://codecov.io/gh/hankail05/RJConverter)
 
 RJConverter is a script converts name of directories with RJ code (ex. RJ171695) to its name.
 
