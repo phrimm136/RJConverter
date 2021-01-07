@@ -8,7 +8,7 @@ coverage==4.5.4
 dataclasses==0.5
 idna==2.8
 importlib-metadata==0.23
-lxml==4.4.1
+lxml==4.6.2
 mir.dlsite==0.6.0
 more-itertools==7.2.0
 packaging==19.2
